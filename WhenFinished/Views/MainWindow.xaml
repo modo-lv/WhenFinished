@@ -4,11 +4,24 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:views="clr-namespace:WhenFinished.Views"
+        xmlns:viewModels="clr-namespace:WhenFinished.ViewModels"
+        xmlns:valueConverters="clr-namespace:Simpler.Net.Wpf.ValueConverters;assembly=Simpler.Net.Wpf"
         mc:Ignorable="d"
         Title="WhenFinished" Height="350" Width="525" d:DataContext="{d:DesignInstance views:MainWindow}"
         DataContext="{Binding RelativeSource={RelativeSource Self}}"
         Background="{Binding Source={x:Static SystemColors.ControlBrush}}">
+    <Window.Resources>
+        <valueConverters:EnumToBooleanConverter x:Key="RadioEnum" /> 
+    </Window.Resources>
     <Grid>
+        <StackPanel Orientation="Horizontal">
+            <RadioButton IsChecked="{Binding Path=ViewModel.FinishAction, Converter={StaticResource RadioEnum}, ConverterParameter={x:Static viewModels:FinishActionType.Nothing}}"
+                         Content="Do nothing"/>
+            <RadioButton IsChecked="{Binding Path=ViewModel.FinishAction, Converter={StaticResource RadioEnum}, ConverterParameter={x:Static viewModels:FinishActionType.ShutDown}}"
+                         Content="Shut down"/>
+            <RadioButton IsChecked="{Binding Path=ViewModel.FinishAction, Converter={StaticResource RadioEnum}, ConverterParameter={x:Static viewModels:FinishActionType.Restart}}"
+                         Content="Restart"/>
+        </StackPanel>
         <TextBlock VerticalAlignment="Bottom"
                    Text="{Binding Path=ViewModel.LastLogMessage}"/>
     </Grid>

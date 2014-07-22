@@ -36,21 +36,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Simpler.Net, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Simpler.Net.Events, Version=0.1.1.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Simpler.Net.0.1.1\lib\net40\Simpler.Net.dll</HintPath>
-    </Reference>
-    <Reference Include="Simpler.Net.Events, Version=0.1.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Simpler.Net.Events.0.1.0\lib\net20\Simpler.Net.Events.dll</HintPath>
+      <HintPath>..\..\Simpler.Net\Simpler.Net.Events\bin\Release\Simpler.Net.Events.dll</HintPath>
     </Reference>
     <Reference Include="Simpler.Net.FileSystem, Version=0.4.5.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Simpler.Net.FileSystem.0.4.5\lib\net40\Simpler.Net.FileSystem.dll</HintPath>
+      <HintPath>..\..\Simpler.Net\Simpler.Net.FileSystem\bin\Release\Simpler.Net.FileSystem.dll</HintPath>
     </Reference>
-    <Reference Include="Simpler.Net.Wpf, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+    <Reference Include="Simpler.Net.Wpf, Version=0.2.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\packages\Simpler.Net.Wpf.0.1.0\lib\net45\Simpler.Net.Wpf.dll</HintPath>
+      <HintPath>..\..\Simpler.Net\Simpler.Net.Wpf\bin\Release\Simpler.Net.Wpf.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -77,6 +73,7 @@
     <Compile Include="Infrastructure\Logging\ILogger.cs" />
     <Compile Include="Infrastructure\Logging\Logger.cs" />
     <Compile Include="Infrastructure\Settings.cs" />
+    <Compile Include="ViewModels\FinishActionType.cs" />
     <Compile Include="ViewModels\MainWindowViewModel.cs" />
     <Compile Include="Views\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -108,7 +105,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

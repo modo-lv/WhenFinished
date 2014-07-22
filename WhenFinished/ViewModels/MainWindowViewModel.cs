@@ -8,12 +8,27 @@ namespace WhenFinished.ViewModels
     /// </summary>
     public class MainWindowViewModel : Bindable
     {
-        private string _lastLogMessage;
-
+        /// <summary>
+        /// Last message in the event log.
+        /// </summary>
         public String LastLogMessage
         {
             get { return _lastLogMessage; }
             set { SetAndNotify(ref _lastLogMessage, value); }
         }
+
+        /// <summary>
+        /// User's selection of what to do when the given up has finished.
+        /// </summary>
+        public FinishActionType FinishAction
+        {
+            get { return _finishAction; }
+            set { SetAndNotify(ref _finishAction, value); }
+        }
+
+        #region Backing fields
+        private string _lastLogMessage;
+        private FinishActionType _finishAction;
+        #endregion
     }
 }
